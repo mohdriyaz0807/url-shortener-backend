@@ -238,5 +238,4 @@ app.get('/getLongUrl/:str', async (req, res) => {
   })
 
 
-
 app.listen(port, () => console.log("your app runs with port:",port));
