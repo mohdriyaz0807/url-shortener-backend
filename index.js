@@ -48,7 +48,7 @@ app.post("/register", async (req, res) => {
                 to: `${req.body.email}`, 
                 subject: "Verification mail",
                 text: "click to Verify your email and activate your account", 
-                html: `<b>Click on the link to verify your email <a href="http://localhost:3000/confirm/${verifyString}">Click here</a></b>`,
+                html: `<b>Click on the link to verify your email <a href="https://url-shortener-backend-jwt.herokuapp.com/${verifyString}">Click here</a></b>`,
             });
 
         await db.collection("user").insertOne(req.body);
