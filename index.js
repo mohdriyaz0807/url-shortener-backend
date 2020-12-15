@@ -198,7 +198,7 @@ app.get('/getLongUrl/:str', async (req, res) => {
           to: `${req.body.email}`, 
           subject: "Password Reset", 
           text: "Reset your password", 
-          html: `<b>Click below to reset your password</b><br> <a href='https://reset-password.netlify.app/new_password.html?random=${random}'>Reset</a>`
+          html: `<b>Click below to reset your password</b><br> <a href='https://url-shortener-frontend-jwt.netlify.app/new_password.html?random=${random}'>Reset</a>`
         })
         await db.collection("user").updateOne({ email: req.body.email },{$set:{'randomstring':random}});
         res.status(200).json({message: `Thanks! Please check ${req.body.email} for a link to reset your password.`,icon:'success'});
