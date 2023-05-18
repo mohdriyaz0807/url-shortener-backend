@@ -14,7 +14,7 @@ const objectId = mongodb.ObjectID
 
 const app = express();
 const dbURL = process.env.DB_URL ||"mongodb://127.0.0.1:27017";
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4000
 app.use(cors())
 app.use(express.json());
 
@@ -58,7 +58,7 @@ app.post("/register", async (req, res) => {
         clientInfo.close();
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   })
 
@@ -84,7 +84,7 @@ app.post("/register", async (req, res) => {
             clientInfo.close()
         }
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 })
   
@@ -108,7 +108,7 @@ app.post("/register", async (req, res) => {
         res.status(400).json({ message: "User not registered" ,icon :'warning' });
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   })
 
@@ -130,7 +130,7 @@ app.post("/register", async (req, res) => {
           res.status(404).json({message: "User not found, data not updated"})
         }
     }catch(err){
-      console.log(err);
+      console.error(err);
     }
   })
 
@@ -148,7 +148,7 @@ app.post("/register", async (req, res) => {
             res.send('<h1>Link has expired</h1>')
         }
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 })
 
@@ -172,7 +172,7 @@ app.get('/getLongUrl/:str', async (req, res) => {
           })
       }
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 })
 
@@ -210,7 +210,7 @@ app.get('/getLongUrl/:str', async (req, res) => {
       }
     }
     catch(err){
-      console.log(err);
+      console.error(err);
     }
   })
 
@@ -234,7 +234,7 @@ app.get('/getLongUrl/:str', async (req, res) => {
       }
   }
   catch(err){
-    console.log(err);
+    console.error(err);
   }
   })
 

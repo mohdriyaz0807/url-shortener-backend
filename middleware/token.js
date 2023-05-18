@@ -7,7 +7,6 @@ if(req.headers.authorization!==undefined){
         if (err) throw (res.status(404).json({
             message:'session ended',icon:'error'
         }))
-        console.log(decoded)
     })
     next()
     }
